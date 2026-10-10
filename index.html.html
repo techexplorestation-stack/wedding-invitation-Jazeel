@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Mohammed Jazeel & Annath Nafiya</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #051a14;
+            --bg-card: rgba(12, 38, 29, 0.75);
+            --gold-primary: #e5c378;
+            --gold-light: #f7e7be;
+            --gold-dark: #b88e39;
+            --text-light: #f0f4f2;
+            --text-muted: #a3b8b0;
+            --border-gold: rgba(229, 195, 120, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(229, 195, 120, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(10, 54, 40, 0.5) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--gold-primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 12s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-frame {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 32px 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 0 15px rgba(229, 195, 120, 0.05);
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-frame::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 1px solid rgba(229, 195, 120, 0.2);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .bismillah {
+            font-family: 'Amiri', serif;
+            font-size: 28px;
+            color: var(--gold-primary);
+            margin-bottom: 16px;
+            text-shadow: 0 0 10px rgba(229, 195, 120, 0.2);
+        }
+
+        .sub-header {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: var(--gold-light);
+            line-height: 1.2;
+            margin: 15px 0;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .ampersand {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            color: var(--gold-dark);
+            display: block;
+            margin: 4px 0;
+        }
+
+        .invitation-text {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin: 18px 0;
+            line-height: 1.8;
+        }
+
+        .event-date-main {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+            padding: 12px 0;
+            border-top: 1px dashed var(--border-gold);
+            border-bottom: 1px dashed var(--border-gold);
+            margin: 20px 0;
+        }
+
+        .venue-title {
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 2.5px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .timer-box {
+            background: rgba(5, 26, 20, 0.6);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 10px 4px;
+            text-align: center;
+        }
+
+        .timer-val {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+
+        .timer-unit {
+            font-size: 9px;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .event-card {
+            background: rgba(5, 26, 20, 0.5);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .event-type {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .event-detail-line {
+            font-size: 13px;
+            color: var(--text-light);
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #051a14;
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(229, 195, 120, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .qr-wrapper {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .qr-wrapper img {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            border: 2px solid var(--gold-primary);
+            padding: 4px;
+            background: #fff;
+        }
+
+        .qr-caption {
+            font-size: 10px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .input-group {
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 10px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            color: var(--gold-primary);
+            margin-bottom: 4px;
+        }
+
+        .input-control {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(5, 26, 20, 0.8);
+            border: 1px solid var(--border-gold);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .input-control:focus {
+            border-color: var(--gold-primary);
+        }
+
+        textarea.input-control {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #051a14;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .blessings-feed {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .blessing-card {
+            background: rgba(5, 26, 20, 0.8);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 14px;
+            text-align: left;
+        }
+
+        .blessing-text {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.6;
+            font-style: normal;
+            margin-bottom: 10px;
+            word-break: break-word;
+            white-space: pre-line;
+        }
+
+        .blessing-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(229, 195, 120, 0.15);
+            padding-top: 8px;
+            font-size: 10px;
+        }
+
+        .blessing-author {
+            font-weight: 600;
+            color: var(--gold-light);
+        }
+
+        .blessing-relation {
+            color: var(--gold-primary);
+            background: rgba(229, 195, 120, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 9px;
+            text-transform: uppercase;
+        }
+
+        .empty-feed {
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 12px;
+            font-style: italic;
+        }
+
+        .audio-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 16px;
+            border-radius: 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            font-size: 11px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            backdrop-filter: blur(8px);
+        }
+
+        .pulse-wave {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold-primary);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.4); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 10px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="particles" id="particles"></div>
+
+    <!-- Wedding Background Audio -->
+    <audio id="bgAudio" loop preload="auto">
+        <source src="https://ia800304.us.archive.org/34/items/MisharyRashidAlafasyTala_al_Badru_Alayna/Tala_al_Badru_Alayna_Vocals.mp3" type="audio/mpeg">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Pachelbel_Canon_in_D_Major_Piano.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Welcome Overlay with "Open Invitation" button for auto-playing music -->
+    <div id="welcomeOverlay" onclick="startAudioAndOpen()" style="position: fixed; inset: 0; background: rgba(5, 26, 20, 0.95); z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; cursor: pointer; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div style="font-family: 'Amiri', serif; font-size: 32px; color: var(--gold-primary); margin-bottom: 12px;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+        <div style="font-family: 'Great Vibes', cursive; font-size: 40px; color: var(--gold-light); margin-bottom: 16px;">Mohammed Jazeel &amp; Annath Nafiya</div>
+        <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 24px;">WEDDING INVITATION</div>
+        <button style="padding: 14px 32px; background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); color: #051a14; border: none; border-radius: 30px; font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; cursor: pointer; box-shadow: 0 0 20px rgba(229, 195, 120, 0.4); display: flex; align-items: center; gap: 8px;">
+            <span>🎵</span> OPEN INVITATION
+        </button>
+    </div>
+
+    <div class="audio-toggle" id="audioBtn" onclick="toggleAudio()" title="Play / Pause Nasheed">
+        <span class="pulse-wave" id="audioPulse" style="display:none;"></span>
+        <span id="audioLabel">🎵 NASHEED</span>
+    </div>
+
+    <div class="container">
+
+        <div class="card-frame">
+            <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+            <div class="sub-header">Together With Our Families</div>
+
+            <div class="couple-names">
+                Mohammed Jazeel
+                <span class="ampersand">&amp;</span>
+                Annath Nafiya
+            </div>
+
+            <div class="invitation-text">
+                INVITE YOU TO CELEBRATE OUR WEDDING
+            </div>
+
+            <div class="event-date-main">
+                JANUARY 4, 2027
+            </div>
+
+            <div class="venue-title">
+                KMS CONVENTION CENTRE, MANGALORE
+            </div>
+        </div>
+
+        <div class="card-frame">
+            <div class="section-title">Our Forever Starts In</div>
+            <div class="timer-grid">
+                <div class="timer-box">
+                    <div class="timer-val" id="d">00</div>
+                    <div class="timer-unit">DAYS</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-val" id="h">00</div>
+                    <div class="timer-unit">HOURS</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-val" id="m">00</div>
+                    <div class="timer-unit">MINS</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-val" id="s">00</div>
+                    <div class="timer-unit">SECS</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-frame">
+            <div class="section-title">Celebration Details</div>
+            
+            <div class="event-card">
+                <div class="event-type">Nikkah Ceremony</div>
+                <div class="event-detail-line">Monday, 04 January 2027</div>
+                <div class="event-detail-line"><strong>11:30 AM IST</strong></div>
+                <div class="event-detail-line" style="margin-top: 10px; color: var(--gold-light);">KMS Convention Centre</div>
+                <div class="event-detail-line" style="font-size: 11px; color: var(--text-muted);">Mangalore, Karnataka</div>
+
+                <a href="https://maps.app.goo.gl/xnsPTfBU2XJPATqL6?g_st=aw" target="_blank" rel="noopener noreferrer" class="map-btn">
+                    Open in Google Maps ↗
+                </a>
+
+                <div class="qr-wrapper">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=051a14&data=https://maps.app.goo.gl/xnsPTfBU2XJPATqL6?g_st=aw" alt="Venue Map QR Code">
+                    <div class="qr-caption">Scan for GPS Navigation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-frame">
+            <div class="section-title">Send Duas &amp; Wishes</div>
+            
+            <form id="wishForm" onsubmit="handleWishSubmit(event)">
+                <div class="input-group">
+                    <label for="guestName">Your Name</label>
+                    <input type="text" id="guestName" class="input-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="guestRelation">Relationship</label>
+                    <select id="guestRelation" class="input-control" required>
+                        <option value="Friend">Friend</option>
+                        <option value="Family">Family</option>
+                        <option value="Relative">Relative</option>
+                        <option value="Well Wisher">Well Wisher</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="guestMessage">Your Message</label>
+                    <textarea id="guestMessage" class="input-control" placeholder="Write your message or dua here..." required></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="submit-btn">Send Message</button>
+            </form>
+
+            <div style="margin-top: 24px; border-top: 1px solid var(--border-gold); padding-top: 16px;">
+                <div class="section-title" style="font-size: 11px;">Guestbook</div>
+                <div id="blessingsFeed" class="blessings-feed">
+                    <div class="empty-feed" id="emptyMsg">Be the first to leave a message for Mohammed Jazeel &amp; Annath Nafiya!</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            MOHAMMED JAZEEL &amp; ANNATH NAFIYA<br>
+            04 • 01 • 2027
+        </footer>
+
+    </div>
+
+    <script>
+        // CONFIGURATION: Replace with your Google Apps Script Web App URL or cloud API endpoint
+        const API_ENDPOINT = "https://script.google.com/macros/s/AKfycbx6sTRgLE4mpb9E9TV0_ZyYMsd_bp2dtGLjtpruISzBF2v8O2ochXiBJfySnNN1m1SP/exec"; 
+
+        // Create ambient particles
+        const container = id('particles');
+        for (let i = 0; i < 20; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDelay = (Math.random() * 10) + 's';
+            p.style.animationDuration = (8 + Math.random() * 8) + 's';
+            container.appendChild(p);
+        }
+
+        function id(e) { return document.getElementById(e); }
+
+        // Real-time Countdown Timer
+        const targetDate = new Date('January 4, 2027 11:30:00 GMT+0530').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                id('d').innerText = days < 10 ? '0' + days : days;
+                id('h').innerText = hours < 10 ? '0' + hours : hours;
+                id('m').innerText = mins < 10 ? '0' + mins : mins;
+                id('s').innerText = secs < 10 ? '0' + secs : secs;
+            } else {
+                id('d').innerText = '00';
+                id('h').innerText = '00';
+                id('m').innerText = '00';
+                id('s').innerText = '00';
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Web Audio Synthesizer fallback
+        class WeddingSynth {
+            constructor() {
+                this.ctx = null;
+                this.isPlaying = false;
+                this.step = 0;
+                this.timer = null;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    if (AudioContext) {
+                        this.ctx = new AudioContext();
+                    }
+                }
+            }
+
+            start() {
+                this.init();
+                if (!this.ctx) return;
+                if (this.ctx.state === 'suspended') {
+                    this.ctx.resume();
+                }
+                this.isPlaying = true;
+                this.playNextNote();
+            }
+
+            stop() {
+                this.isPlaying = false;
+                if (this.timer) clearTimeout(this.timer);
+            }
+
+            playNextNote() {
+                if (!this.isPlaying) return;
+
+                const sequence = [
+                    220.00, 246.94, 293.66, 329.63,
+                    369.99, 440.00, 493.88, 587.33,
+                    329.63, 293.66, 246.94, 220.00
+                ];
+
+                const freq = sequence[this.step % sequence.length];
+                this.step++;
+
+                try {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+
+                    gain.gain.setValueAtTime(0.001, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.1, this.ctx.currentTime + 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 1.8);
+
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + 1.8);
+                } catch(e) {}
+
+                this.timer = setTimeout(() => {
+                    this.playNextNote();
+                }, 600);
+            }
+        }
+
+        const synthEngine = new WeddingSynth();
+        let isAudioActive = false;
+
+        function updateAudioUI(playing) {
+            const btnLabel = id('audioLabel');
+            const pulse = id('audioPulse');
+            if (playing) {
+                btnLabel.innerText = "NASHEED PLAYING";
+                pulse.style.display = "inline-block";
+            } else {
+                btnLabel.innerText = "🎵 NASHEED";
+                pulse.style.display = "none";
+            }
+        }
+
+        function playMusic() {
+            if (isAudioActive) return;
+
+            const audio = id('bgAudio');
+            const playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    isAudioActive = true;
+                    updateAudioUI(true);
+                }).catch(() => {
+                    synthEngine.start();
+                    isAudioActive = true;
+                    updateAudioUI(true);
+                });
+            } else {
+                synthEngine.start();
+                isAudioActive = true;
+                updateAudioUI(true);
+            }
+        }
+
+        function startAudioAndOpen() {
+            playMusic();
+            const overlay = id('welcomeOverlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
+                overlay.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 500);
+            }
+        }
+
+        function toggleAudio() {
+            const audio = id('bgAudio');
+            if (isAudioActive) {
+                audio.pause();
+                synthEngine.stop();
+                isAudioActive = false;
+                updateAudioUI(false);
+            } else {
+                playMusic();
+            }
+        }
+
+        window.addEventListener('load', () => {
+            document.body.addEventListener('touchstart', playMusic, { once: true });
+            document.body.addEventListener('click', playMusic, { once: true });
+            loadBlessings();
+        });
+
+        // Guestbook handlers (Hybrid Cloud + Local fallback)
+        async function loadBlessings() {
+            const feed = id('blessingsFeed');
+            const emptyMsg = id('emptyMsg');
+
+            if (API_ENDPOINT) {
+                try {
+                    const response = await fetch(API_ENDPOINT);
+                    const data = await response.json();
+                    if (Array.isArray(data) && data.length > 0) {
+                        if (emptyMsg) emptyMsg.style.display = 'none';
+                        feed.innerHTML = '';
+                        data.forEach(item => {
+                            renderBlessingCard(item.name, item.relation, item.message);
+                        });
+                        return;
+                    }
+                } catch(err) {
+                    console.log("Fetching cloud guestbook failed, checking local storage...");
+                }
+            }
+
+            const stored = localStorage.getItem('wedding_messages_global');
+            if (stored) {
+                const blessings = JSON.parse(stored);
+                if (blessings.length > 0) {
+                    if (emptyMsg) emptyMsg.style.display = 'none';
+                    feed.innerHTML = '';
+                    blessings.forEach(item => {
+                        renderBlessingCard(item.name, item.relation, item.message);
+                    });
+                    return;
+                }
+            }
+
+            if (emptyMsg) emptyMsg.style.display = 'block';
+        }
+
+        function renderBlessingCard(name, relation, message) {
+            const feed = id('blessingsFeed');
+            const card = document.createElement('div');
+            card.className = 'blessing-card';
+            card.innerHTML = `
+                <div class="blessing-text">${escapeHtml(message)}</div>
+                <div class="blessing-meta">
+                    <span class="blessing-author">${escapeHtml(name)}</span>
+                    <span class="blessing-relation">${escapeHtml(relation)}</span>
+                </div>
+            `;
+            feed.prepend(card);
+        }
+
+        async function handleWishSubmit(e) {
+            e.preventDefault();
+            const name = id('guestName').value.trim();
+            const relation = id('guestRelation').value;
+            const message = id('guestMessage').value.trim();
+
+            if (!name || !message) return;
+
+            const emptyMsg = id('emptyMsg');
+            if (emptyMsg) emptyMsg.style.display = 'none';
+
+            renderBlessingCard(name, relation, message);
+
+            // Save locally
+            const stored = localStorage.getItem('wedding_messages_global');
+            const blessings = stored ? JSON.parse(stored) : [];
+            blessings.push({ name, relation, message });
+            localStorage.setItem('wedding_messages_global', JSON.stringify(blessings));
+
+            // Save to Cloud endpoint if configured
+            if (API_ENDPOINT) {
+                try {
+                    await fetch(API_ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, relation, message })
+                    });
+                } catch(err) {
+                    console.log("Could not push to remote endpoint");
+                }
+            }
+
+            id('wishForm').reset();
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/[&<>"']/g, function(m) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                }[m];
+            });
+        }
+    </script>
+</body>
+</html>
